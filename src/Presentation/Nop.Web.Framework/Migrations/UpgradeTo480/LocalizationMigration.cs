@@ -247,6 +247,10 @@ public class LocalizationMigration : MigrationBase
             ["Security.Permission.System.ManageMessageQueue"] = "Admin area. Message Queue. Manage",
             ["Security.Permission.System.ManageScheduleTasks"] = "Admin area. Schedule Tasks. Manage",
             ["Security.Permission.System.ManageSystemLog"] = "Admin area. System Log. Manage",
+
+            //#7281
+            ["Admin.Customers.Customers.Fields.MustChangePasswordAtNextLogin"] = "Customer must change password at next login",
+            ["Admin.Customers.Customers.Fields.MustChangePasswordAtNextLogin.Hint"] = "Check to require the customer to change their password at next login.",
         }, languageId);
 
         #endregion

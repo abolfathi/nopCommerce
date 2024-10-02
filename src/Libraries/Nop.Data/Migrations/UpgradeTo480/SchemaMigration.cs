@@ -1,5 +1,6 @@
 ﻿using FluentMigrator;
 using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Customers;
 
 namespace Nop.Data.Migrations.UpgradeTo480;
 
@@ -21,5 +22,18 @@ public class SchemaMigration : ForwardOnlyMigration
         var hasDiscountsAppliedColumnName = "HasDiscountsApplied";
         if (Schema.Table(ptoductTableName).Column(hasDiscountsAppliedColumnName).Exists())
             Delete.Column(hasDiscountsAppliedColumnName).FromTable(ptoductTableName);
+
+        //#7281
+        var categoryTableName = nameof(Customer);
+        var restrictFromVendorsColumnName = nameof(Customer.MustChangePasswordAtNextLogin);
+
+        if (!Schema.Table(categoryTableName).Column(restrictFromVendorsColumnName).Exists())
+        {
+            Alter.Table(categoryTableName)
+                .AddColumn(restrictFromVendorsColumnName)
+                .AsBoolean()
+                .NotNullable()
+                .WithDefaultValue(false);
+        }
     }
 }

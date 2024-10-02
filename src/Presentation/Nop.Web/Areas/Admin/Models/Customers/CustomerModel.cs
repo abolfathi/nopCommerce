@@ -201,6 +201,9 @@ public partial record CustomerModel : BaseNopEntityModel, IAclSupportedModel
     [NopResourceDisplayName("Admin.Customers.Customers.Fields.MultiFactorAuthenticationProvider")]
     public string MultiFactorAuthenticationProvider { get; set; }
 
+    [NopResourceDisplayName("Admin.Customers.Customers.Fields.MustChangePasswordAtNextLogin")]
+    public bool MustChangePasswordAtNextLogin { get; set; }
+
     public IList<SelectListItem> AvailableCustomerRoles { get; set; }
 
     [NopResourceDisplayName("Admin.Customers.Customers.Fields.CustomerRoles")]

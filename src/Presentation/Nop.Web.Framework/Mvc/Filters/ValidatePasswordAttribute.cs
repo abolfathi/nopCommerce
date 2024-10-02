@@ -87,7 +87,7 @@ public sealed class ValidatePasswordAttribute : TypeFilterAttribute
 
             //check password expiration
             var customer = await _workContext.GetCurrentCustomerAsync();
-            if (!await _customerService.IsPasswordExpiredAsync(customer))
+            if (!await _customerService.IsPasswordExpiredAsync(customer) && !customer.MustChangePasswordAtNextLogin)
                 return;
 
             var returnUrl = _webHelper.GetRawUrl(context.HttpContext.Request);

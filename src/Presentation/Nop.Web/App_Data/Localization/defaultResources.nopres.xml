@@ -11973,6 +11973,12 @@
   <LocaleResource Name="Admin.Customers.Customers.Fields.MultiFactorAuthenticationProvider.Hint">
     <Value>Name of the multi-factor authentication provider to which the customer is associated.</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.MustChangePasswordAtNextLogin">
+    <Value>Customer must change password at next login</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.MustChangePasswordAtNextLogin.Hint">
+    <Value>Check to require the customer to change their password at next login.</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Customers.Customers.Fields.Newsletter">
     <Value>Newsletter</Value>
   </LocaleResource>
